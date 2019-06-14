@@ -13,8 +13,8 @@ class HomeController extends AbstractController
      */
     public function index()
     {
+        $currencies = [];
         if ($exchange = $this->getDoctrine()->getRepository(Exchange::class)->findAll()) {
-            $currencies = [];
 
             foreach ($exchange as $currency) {
                 $currencies[] = [
